@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('/content/attendance_dataset.csv', parse_dates=['Date', 'Check_In', 'Check_Out'])
+    df = pd.read_csv('attendance_dataset.csv', parse_dates=['Date', 'Check_In', 'Check_Out'])
     df['Hours_Worked'] = pd.to_numeric(df['Hours_Worked'], errors='coerce').fillna(0)
     df['OT_Hours']    = pd.to_numeric(df['OT_Hours'],    errors='coerce').fillna(0)
     return df
